@@ -32,8 +32,13 @@ class Book {
 }
 
 btn.addEventListener('click', () => {
-    const newBook = new Book (bookTitle.value, bookAuthor.value, bookPages.value)
 
-    const div = newBook.showBook()
-    gridLayout.append(div)
+    if(bookTitle.value === '' || bookAuthor.value === '' || bookPages.value === ''){
+        alert("Can't be empty!")
+    } else {
+        const newBook = new Book (bookTitle.value, bookAuthor.value, bookPages.value)
+
+        const div = newBook.showBook()
+        gridLayout.append(div)
+    }
 })
